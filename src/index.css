@@ -2,12 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+.App {
+  @apply max-w-[100dvw];
+}
+
+section {
+  @apply px-20 py-10 min-h-screen;
+}
+
 button {
   @apply px-4 py-2 rounded;
 }
 
+.sectionHeading {
+  @apply text-5xl mb-10 capitalize font-semibold;
+}
+
+.sectionSubHeading {
+  @apply text-3xl mb-5 capitalize font-semibold;
+}
+
+/* header */
 header {
-  @apply w-full xl:flex flex-row;
+  @apply w-full xl:flex xl:flex-row xl:justify-between px-20 py-5;
 }
 
 .logoGrp {
@@ -15,9 +32,82 @@ header {
 }
 
 nav {
-  @apply flex flex-col xl:flex-row items-center gap-5;
+  @apply flex flex-col xl:flex-row items-center gap-10 xl:gap-20;
+}
+
+.navList {
+  @apply flex xl:flex-row xl:items-center gap-5;
 }
 
 .headerIconGrp {
-  @apply flex flex-row items-center gap-3;
+  @apply flex flex-row items-center gap-5;
+}
+
+.headerIcon {
+  @apply h-5;
+}
+
+/* hero section */
+.heroMainText {
+  @apply text-6xl text-center mt-10 font-bold;
+}
+
+.heroSubText {
+  @apply text-xl text-center mt-12;
+}
+
+/* best products */
+.imgSection,
+.textSection {
+  @apply xl:w-1/2;
+}
+
+.bestProductsGrp {
+  @apply flex flex-row gap-5 items-start;
+}
+
+.bestProductImg {
+  @apply rounded h-36;
+}
+
+.bestProductGrpHeading {
+  @apply capitalize text-lg font-semibold;
+}
+
+.bestProductTextGrp {
+  @apply flex flex-col justify-between;
+}
+
+.bestProductText {
+  @apply text-sm;
+}
+
+.bestProductReadMore {
+  @apply font-semibold mt-5;
+}
+
+.pointsGrp {
+  @apply flex flex-row gap-2 items-center;
+}
+
+/* why choose us */
+.whyChooseUsGrp {
+  @apply flex flex-col gap-3 items-start;
+}
+
+.whyChooseUsImg {
+  @apply h-5;
+}
+
+.whyChooseUsHeading {
+  @apply font-semibold;
+}
+
+.whyChooseUsText {
+  @apply text-ehiText text-sm;
+}
+
+/* reviews */
+.reviewsGrp {
+  @apply flex flex-row items-center gap-10;
 }

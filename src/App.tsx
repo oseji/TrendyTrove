@@ -1,4 +1,12 @@
 import { useState } from "react";
+
+import HeroSection from "./HeroSection";
+import BestProducts from "./BestProducts";
+import WhyChooseUs from "./WhyChooseUs";
+import Reviews from "./Reviews";
+import Blogs from "./Blogs";
+import Footer from "./footer";
+
 import userIcon from "./assets/user.svg";
 import cartIcon from "./assets/cart.svg";
 import logo from "./assets/logo.png";
@@ -10,8 +18,8 @@ function App() {
     <div className="App">
       <header>
         <div className="logoGrp">
-          <img src={logo} alt="Trendy Trove logo" />
-          <h3>TrendyTrove</h3>
+          <img src={logo} className="h-8" alt="Trendy Trove logo" />
+          <h3 className=" text-3xl font-bold">TrendyTrove</h3>
         </div>
 
         <nav>
@@ -42,44 +50,20 @@ function App() {
               </a>
             </li>
           </ul>
-        </nav>
 
-        <div className="headerIconGrp">
-          <img src={userIcon} alt="user icon" className="headerIcon" />
-          <img src={cartIcon} alt="cart icon" className="headerIcon" />
-        </div>
+          <div className="headerIconGrp">
+            <img src={userIcon} alt="user icon" className="headerIcon" />
+            <img src={cartIcon} alt="cart icon" className="headerIcon" />
+          </div>
+        </nav>
       </header>
 
-      {/* hero section */}
-      <section className="heroSection">
-        <h1 className="heroMainText">
-          Where Comfort Meets Style, Every Room Finds Its Smile.
-        </h1>
-
-        <p className="heroSubText">
-          From timeless classics to modern marvels, we offer pieces that
-          transform houses into homes. Whether you're furnishing a cozy nook or
-          designing a grand living space, we're here to elevate your interior
-          journey. Enjoy browsing and discovering pieces that inspire your
-          unique style!
-        </p>
-
-        <div className="flex flex-row items-center justify-center gap-5">
-          <button className="bg-ehiGreen">Learn more</button>
-          <button className=" bg-transparent border border-white">
-            About us
-          </button>
-        </div>
-      </section>
-
-      {/* shop our best products */}
-      <section className=" flex flex-col xl:flex-row xl:justify-between items-center">
-        {/* img section */}
-        <div className="imgSection"></div>
-
-        {/* text section */}
-        <div className="textSection"></div>
-      </section>
+      <HeroSection></HeroSection>
+      <BestProducts></BestProducts>
+      <WhyChooseUs></WhyChooseUs>
+      <Reviews></Reviews>
+      <Blogs></Blogs>
+      <Footer></Footer>
     </div>
   );
 }

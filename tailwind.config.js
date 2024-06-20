@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         ehiGreen: "#35736E",
+        ehiText: "#6A6A6A",
       },
     },
   },
