@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  @apply px-4 py-2 rounded;
+}
+
+header {
+  @apply w-full xl:flex flex-row;
+}
+
+.logoGrp {
+  @apply flex flex-row items-center gap-5;
+}
+
+nav {
+  @apply flex flex-col xl:flex-row items-center gap-5;
+}
+
+.headerIconGrp {
+  @apply flex flex-row items-center gap-3;
+}
