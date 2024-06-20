@@ -5,7 +5,7 @@ import BestProducts from "./BestProducts";
 import WhyChooseUs from "./WhyChooseUs";
 import Reviews from "./Reviews";
 import Blogs from "./Blogs";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 import userIcon from "./assets/user.svg";
 import cartIcon from "./assets/cart.svg";
