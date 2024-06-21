@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="heroSection">
+    <section className="heroSection" id="home">
       <h1 className="heroMainText">
         Where Comfort Meets Style, Every Room Finds Its Smile.
       </h1>

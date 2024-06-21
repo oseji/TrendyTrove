@@ -2,41 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 .App {
   @apply max-w-[100dvw];
 }
 
 section {
-  @apply px-20 py-10 min-h-screen;
+  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-screen min-w-full;
 }
 
 button {
-  @apply px-4 py-2 rounded;
+  @apply px-4 py-2 rounded hover:scale-110 transition ease-in-out duration-150;
 }
 
 .sectionHeading {
-  @apply text-5xl mb-10 capitalize font-semibold;
+  @apply text-3xl xl:text-5xl mb-10 capitalize font-semibold;
 }
 
 .sectionSubHeading {
-  @apply text-3xl mb-5 capitalize font-semibold;
+  @apply text-2xl xl:text-3xl text-center xl:text-start mb-5 capitalize font-semibold;
 }
 
 /* header */
 header {
-  @apply w-full xl:flex xl:flex-row xl:justify-between px-20 py-5;
+  @apply fixed w-full xl:flex xl:flex-row xl:justify-between px-5 py-5 xl:px-20 xl:py-2 z-10 bg-white shadow-md transition ease-in-out duration-300;
 }
 
 .logoGrp {
-  @apply flex flex-row items-center gap-5;
+  @apply w-full xl:w-auto flex flex-row justify-between items-center gap-5;
 }
 
 nav {
-  @apply flex flex-col xl:flex-row items-center gap-10 xl:gap-20;
+  @apply w-full xl:w-auto bg-white flex flex-col xl:flex-row items-center gap-10 xl:gap-20 pt-10 xl:pt-0 transition ease-in-out duration-300 relative;
+}
+
+.hideNav {
+  @apply -translate-y-[500px] xl:-translate-y-0 fixed xl:relative;
 }
 
 .navList {
-  @apply flex xl:flex-row xl:items-center gap-5;
+  @apply flex flex-col xl:flex-row items-center gap-5;
+}
+
+.navText {
+  @apply font-semibold text-ehiText hover:text-black hover:scale-110 transition ease-in-out duration-150;
 }
 
 .headerIconGrp {
@@ -49,7 +61,7 @@ nav {
 
 /* hero section */
 .heroMainText {
-  @apply text-6xl text-center mt-10 font-bold;
+  @apply text-6xl text-center mt-20 font-bold;
 }
 
 .heroSubText {
@@ -83,7 +95,7 @@ nav {
 }
 
 .bestProductReadMore {
-  @apply font-semibold mt-5;
+  @apply font-semibold mt-5 cursor-pointer;
 }
 
 .pointsGrp {
@@ -108,6 +120,88 @@ nav {
 }
 
 /* reviews */
+.reviewSection {
+  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-[70dvh] xl:min-h-screen min-w-full;
+}
+
 .reviewsGrp {
-  @apply flex flex-row items-center gap-10;
+  @apply flex flex-row items-center xl:justify-center gap-10 overflow-x-scroll xl:overflow-x-hidden;
+}
+
+.reviewsGrp::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.reviewCard {
+  @apply min-w-[350px] xl:min-w-0 xl:w-[30%] h-[400px] flex flex-col justify-end rounded-xl shadow-xl;
+}
+
+.reviewTextBox {
+  @apply flex flex-col items-center bg-white p-2 rounded-xl w-11/12 mx-auto mb-5 relative;
+}
+
+.reviewerImg {
+  @apply h-16 p-2 rounded-full bg-white relative bottom-8;
+}
+
+.reviewerName {
+  @apply font-semibold text-center;
+}
+
+.reviewText {
+  @apply text-xs text-ehiText text-center min-h-16;
+}
+
+.reviewStars {
+  @apply mt-5 pb-2;
+}
+
+/* blogs */
+#Blogs {
+  @apply px-5 py-10 xl:px-20 xl:py-14;
+}
+
+.blogGrp {
+  @apply flex flex-row items-center gap-10 xl:justify-center;
+}
+
+.blogCard {
+  @apply w-full xl:w-[30%];
+}
+
+.blogImg {
+  @apply rounded-xl;
+}
+
+.blogTitle {
+  @apply font-semibold mt-8;
+}
+
+.blogDetails {
+  @apply text-xs;
+}
+
+/* footer */
+footer {
+  @apply px-5 xl:px-20 pt-14 bg-slate-100 text-sm;
+}
+
+.inputGrp {
+  @apply flex flex-col xl:flex-row xl:items-center gap-5 mt-5;
+}
+
+input {
+  @apply bg-transparent p-2 border border-black outline-0 rounded-md;
+}
+
+.footerTextGrp {
+  @apply flex flex-col xl:flex-row xl:justify-between gap-5 xl:gap-0 xl:items-start;
+}
+
+.footerCol {
+  @apply capitalize;
+}
+
+.footerIcon {
+  @apply h-7 px-3.5 py-2 bg-black rounded-full;
 }

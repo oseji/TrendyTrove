@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import HeroSection from "./HeroSection";
 import BestProducts from "./BestProducts";
@@ -11,18 +11,52 @@ import userIcon from "./assets/user.svg";
 import cartIcon from "./assets/cart.svg";
 import logo from "./assets/logo.png";
 
+import menu from "./assets/menu.svg";
+import close from "./assets/close.svg";
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [showNav, setShowNav] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
+
+  const [menuToggled, setMenuToggled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  const toggleMenu = () => {
+    setMenuToggled(!menuToggled);
+
+    const nav = navRef.current;
+    nav?.classList.toggle("hideNav");
+  };
+
+  const handleNavBarScroll = () => {
+    window.scrollY > lastScrollY ? setShowNav(false) : setShowNav(true);
+
+    setLastScrollY(window.scrollY);
+  };
+
+  //handling sticky navbar
+  useEffect(() => {
+    window.addEventListener("scroll", handleNavBarScroll);
+  }, [lastScrollY]);
 
   return (
     <div className="App">
-      <header>
-        <div className="logoGrp">
-          <img src={logo} className="h-8" alt="Trendy Trove logo" />
-          <h3 className=" text-3xl font-bold">TrendyTrove</h3>
+      <header className={`${showNav ? "translate-y-0" : "-translate-y-full"}`}>
+        <div className="logoGrp z-20">
+          <div className=" flex flex-row items-center gap-5 z-20">
+            <img src={logo} className="xl:h-8 h-5" alt="Trendy Trove logo" />
+            <h3 className=" text-2xl xl:text-3xl font-bold ">TrendyTrove</h3>
+          </div>
+
+          <img
+            src={menuToggled ? close : menu}
+            alt="menu icon"
+            className=" xl:hidden h-7 z-20"
+            onClick={toggleMenu}
+          />
         </div>
 
-        <nav>
+        <nav ref={navRef} className="hideNav">
           <ul className="navList">
             <li className="navText">
               <a href="#home" className="navLink">
@@ -40,12 +74,12 @@ function App() {
               </a>
             </li>
             <li className="navText">
-              <a href="#blog" className="navLink">
+              <a href="#Blogs" className="navLink">
                 Blog
               </a>
             </li>
             <li className="navText">
-              <a href="#contact" className="navLink">
+              <a href="#footer" className="navLink">
                 Contact us
               </a>
             </li>

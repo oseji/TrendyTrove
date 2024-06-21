@@ -7,8 +7,8 @@ import dot from "./assets/dot.png";
 
 const BestProducts = () => {
   return (
-    <section>
-      <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start xl:gap-14">
+    <section id="product">
+      <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14">
         {/* img section */}
         <div className="imgSection">
           <h1 className="sectionHeading text-center">Shop our best products</h1>
@@ -69,7 +69,10 @@ const BestProducts = () => {
         </div>
       </div>
 
-      <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start xl:gap-14  mt-20">
+      <div
+        className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14  mt-20"
+        id="services"
+      >
         <div className="textSection">
           <h1 className="sectionSubHeading">
             We help you make Modern Furniture

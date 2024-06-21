@@ -6,7 +6,7 @@ import returns from "./assets/returns.png";
 
 const WhyChooseUs = () => {
   return (
-    <section className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start xl:gap-14">
+    <section className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14">
       <div className="textSection">
         <h1 className="sectionSubHeading">why choose us</h1>
 
