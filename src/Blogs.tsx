@@ -5,8 +5,10 @@ import blog3 from "./assets/blog3.png";
 const Blogs = () => {
   return (
     <div id="Blogs">
-      <div className="flex flex-row justify-between items-center">
-        <h2 className="sectionSubHeading text-ehiGreen">Recent blogs</h2>
+      <div className="flex flex-row justify-between items-center mb-10">
+        <h2 className="text-3xl xl:text-5xl capitalize font-semibold  text-ehiGreen">
+          Recent blogs
+        </h2>
         <p className=" text-ehiGreen underline hover:scale-110 transition ease-in-out duration-150 cursor-pointer">
           View all posts
         </p>

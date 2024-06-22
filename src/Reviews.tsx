@@ -6,9 +6,7 @@ import stars from "./assets/stars.png";
 const Reviews = () => {
   return (
     <div className="reviewSection">
-      <h4 className=" text-center font-semibold text-ehiGreen mb-2">
-        Testimonials
-      </h4>
+      <h4 className=" text-center font-semibold mb-2">Testimonials</h4>
       <h1 className="sectionHeading text-center">Our Client reviews</h1>
 
       <div className="reviewsGrp">

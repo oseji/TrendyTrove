@@ -1,9 +1,14 @@
+@font-face {
+  font-family: Poppins;
+  src: url("/fonts/Poppins-Regular.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth;
+  @apply scroll-smooth font-poppins;
 }
 
 .App {
@@ -19,11 +24,11 @@ button {
 }
 
 .sectionHeading {
-  @apply text-3xl xl:text-5xl mb-10 capitalize font-semibold;
+  @apply text-3xl xl:text-5xl mb-10 capitalize font-semibold text-ehiGreen;
 }
 
 .sectionSubHeading {
-  @apply text-2xl xl:text-3xl text-center xl:text-start mb-5 capitalize font-semibold;
+  @apply text-2xl xl:text-3xl text-center xl:text-start mb-5 capitalize font-semibold text-ehiGreen;
 }
 
 /* header */
@@ -60,12 +65,16 @@ nav {
 }
 
 /* hero section */
+.heroSection {
+  @apply flex flex-col justify-center;
+}
+
 .heroMainText {
-  @apply text-6xl text-center mt-20 font-bold;
+  @apply min-h-40 md:min-h-24 xl:min-h-32 mt-10 md:mt-0 text-4xl md:text-5xl xl:text-6xl text-center font-bold;
 }
 
 .heroSubText {
-  @apply text-xl text-center mt-12;
+  @apply xl:text-xl text-center mt-12;
 }
 
 /* best products */
@@ -79,7 +88,7 @@ nav {
 }
 
 .bestProductImg {
-  @apply rounded h-36;
+  @apply rounded-md h-36;
 }
 
 .bestProductGrpHeading {
@@ -91,15 +100,15 @@ nav {
 }
 
 .bestProductText {
-  @apply text-sm;
+  @apply text-sm md:text-base xl:text-sm;
 }
 
 .bestProductReadMore {
-  @apply font-semibold mt-5 cursor-pointer;
+  @apply font-semibold mt-2 xl:mt-5 cursor-pointer text-sm;
 }
 
 .pointsGrp {
-  @apply flex flex-row gap-2 items-center;
+  @apply flex flex-row gap-2 items-center md:justify-center xl:justify-start;
 }
 
 /* why choose us */
@@ -121,7 +130,7 @@ nav {
 
 /* reviews */
 .reviewSection {
-  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-[70dvh] xl:min-h-screen min-w-full;
+  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-[50dvh] xl:min-h-screen min-w-full;
 }
 
 .reviewsGrp {
@@ -162,7 +171,7 @@ nav {
 }
 
 .blogGrp {
-  @apply flex flex-row items-center gap-10 xl:justify-center;
+  @apply flex flex-col md:flex-row items-center gap-14 xl:gap-10 xl:justify-center;
 }
 
 .blogCard {
@@ -174,7 +183,7 @@ nav {
 }
 
 .blogTitle {
-  @apply font-semibold mt-8;
+  @apply font-semibold mt-5 xl:mt-8;
 }
 
 .blogDetails {
@@ -187,15 +196,19 @@ footer {
 }
 
 .inputGrp {
-  @apply flex flex-col xl:flex-row xl:items-center gap-5 mt-5;
+  @apply flex flex-col xl:flex-row xl:items-end gap-5 mt-5;
 }
 
 input {
-  @apply bg-transparent p-2 border border-black outline-0 rounded-md;
+  @apply bg-transparent p-2 border border-black outline-0 rounded-md min-w-60 max-w-80;
 }
 
 .footerTextGrp {
   @apply flex flex-col xl:flex-row xl:justify-between gap-5 xl:gap-0 xl:items-start;
+}
+
+.footerColGrp {
+  @apply flex flex-col md:flex-row gap-5 md:gap-10 justify-between items-start;
 }
 
 .footerCol {

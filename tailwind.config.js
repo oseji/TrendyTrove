@@ -7,6 +7,9 @@ export default {
         ehiGreen: "#35736E",
         ehiText: "#6A6A6A",
       },
+      fontFamily: {
+        poppins: ["poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

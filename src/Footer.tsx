@@ -15,19 +15,27 @@ const Footer = () => {
       </div>
 
       <form className="inputGrp">
-        <input type="text" placeholder="Enter your name" />
-        <input type="email" placeholder="Enter your email" />
+        <div className=" flex flex-col gap-2">
+          <label htmlFor="name">Name: </label>
+          <input type="text" placeholder="Enter your name" />
+        </div>
+
+        <div className=" flex flex-col gap-2">
+          <label htmlFor="email">Email: </label>
+          <input type="email" placeholder="Enter your email" />
+        </div>
+
         <button
-          className=" border border-black p-2 rounded-md w-fit"
+          className=" border border-black rounded-md w-fit"
           onClick={(e) => {
             e.preventDefault();
           }}
         >
-          <img src={plane} alt="send icon" className="h-6" />
+          <img src={plane} alt="send icon" className="h-5" />
         </button>
       </form>
 
-      <div className="logoGrp my-10">
+      <div className="w-full xl:w-auto flex flex-row  items-center gap-5 my-10">
         <img src={logo} className="h-8" alt="Trendy Trove logo" />
         <h3 className=" text-2xl font-bold">TrendyTrove</h3>
       </div>
@@ -40,28 +48,30 @@ const Footer = () => {
           to suit every taste and budget.
         </p>
 
-        <div className="footerCol">
-          <p>about us</p>
-          <p>services</p>
-          <p>blog</p>
-          <p>contact us</p>
-        </div>
+        <div className="footerColGrp">
+          <div className="footerCol">
+            <p>about us</p>
+            <p>services</p>
+            <p>blog</p>
+            <p>contact us</p>
+          </div>
 
-        <div className="footerCol">
-          <p>support</p>
-          <p>knowledge base</p>
-          <p>live chat</p>
-        </div>
+          <div className="footerCol">
+            <p>support</p>
+            <p>knowledge base</p>
+            <p>live chat</p>
+          </div>
 
-        <div className="footerCol">
-          <p>jobs</p>
-          <p>our team</p>
-          <p>leadership</p>
-          <p>privacy policy</p>
+          <div className="footerCol">
+            <p>jobs</p>
+            <p>our team</p>
+            <p>leadership</p>
+            <p>privacy policy</p>
+          </div>
         </div>
       </div>
 
-      <div className=" flex flex-row items-center gap-4 mt-5">
+      <div className=" flex flex-row items-center gap-4 mt-8">
         <img src={facebook} alt="facebook icon" className="footerIcon" />
         <img src={instagram} alt="instagram icon" className="footerIcon" />
         <img src={twitter} alt="twitter icon" className="footerIcon" />

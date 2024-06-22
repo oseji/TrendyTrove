@@ -11,7 +11,7 @@ const BestProducts = () => {
       <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14">
         {/* img section */}
         <div className="imgSection">
-          <h1 className="sectionHeading text-center">Shop our best products</h1>
+          <h1 className="sectionHeading">Shop our best products</h1>
 
           <img src={img1} alt="image 1" />
         </div>
@@ -78,7 +78,7 @@ const BestProducts = () => {
             We help you make Modern Furniture
           </h1>
 
-          <p>
+          <p className="md:text-center xl:text-start">
             Begin by researching modern furniture designs and trends. Look for
             inspiration in magazines, online platforms, and design exhibitions.
             Develop a marketing strategy to promote your modern furniture
@@ -87,7 +87,7 @@ const BestProducts = () => {
             or retailers to expand your reach.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 mt-5 text-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5 text-start">
             <div className="pointsGrp">
               <img src={dot} alt="dot" className="dot" />
               <p className="point">Testing and Evaluation</p>
@@ -106,7 +106,9 @@ const BestProducts = () => {
             </div>
           </div>
 
-          <button className=" bg-ehiGreen text-white mt-8">Explore more</button>
+          <button className=" bg-ehiGreen text-white mt-8 block md:mx-auto xl:mx-0">
+            Explore more
+          </button>
         </div>
 
         <div className="imgSection">
