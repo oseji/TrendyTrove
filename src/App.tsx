@@ -15,6 +15,21 @@ import menu from "./assets/menu.svg";
 import close from "./assets/close.svg";
 
 function App() {
+  const imageVariants = {
+    hidden: { opacity: 0.5, scale: 0.6 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  };
+
+  const blogVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0.5, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+  };
+
   const [showNav, setShowNav] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
 
@@ -93,10 +108,13 @@ function App() {
       </header>
 
       <HeroSection></HeroSection>
-      <BestProducts></BestProducts>
-      <WhyChooseUs></WhyChooseUs>
+      <BestProducts
+        imageVariants={imageVariants}
+        textVariants={textVariants}
+      ></BestProducts>
+      <WhyChooseUs imageVariants={imageVariants}></WhyChooseUs>
       <Reviews></Reviews>
-      <Blogs></Blogs>
+      <Blogs blogVariants={blogVariants}></Blogs>
       <Footer></Footer>
     </div>
   );

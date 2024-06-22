@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
 import img1 from "./assets/img1.png";
 import bus from "./assets/bus.png";
 import shopping from "./assets/shopping.png";
 import support from "./assets/support.png";
 import returns from "./assets/returns.png";
 
-const WhyChooseUs = () => {
+type imageVariants = {
+  hidden: { opacity: number; scale: number };
+  visible: { opacity: number; scale: number; transition: { duration: number } };
+};
+
+type whyChooseUsProps = {
+  imageVariants: imageVariants;
+};
+
+const WhyChooseUs = (props: whyChooseUsProps) => {
   return (
     <section className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14">
       <div className="textSection">
@@ -69,7 +80,13 @@ const WhyChooseUs = () => {
       </div>
 
       <div className="imgSection">
-        <img src={img1} alt="" />
+        <motion.img
+          variants={props.imageVariants}
+          initial={props.imageVariants.hidden}
+          whileInView={props.imageVariants.visible}
+          src={img1}
+          alt="big image"
+        />
       </div>
     </section>
   );

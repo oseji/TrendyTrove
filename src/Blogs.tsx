@@ -1,8 +1,19 @@
+import { motion } from "framer-motion";
+
 import blog1 from "./assets/blog1.png";
 import blog2 from "./assets/blog2.png";
 import blog3 from "./assets/blog3.png";
 
-const Blogs = () => {
+type blogVariants = {
+  hidden: { opacity: number; y: number };
+  visible: { opacity: number; y: number; transition: { duration: number } };
+};
+
+type blogsProps = {
+  blogVariants: blogVariants;
+};
+
+const Blogs = (props: blogsProps) => {
   return (
     <div id="Blogs">
       <div className="flex flex-row justify-between items-center mb-10">
@@ -15,7 +26,12 @@ const Blogs = () => {
       </div>
 
       <div className="blogGrp">
-        <div className="blogCard">
+        <motion.div
+          variants={props.blogVariants}
+          initial={props.blogVariants.hidden}
+          whileInView={props.blogVariants.visible}
+          className="blogCard"
+        >
           <img src={blog1} alt="blog image" className="blogImg" />
 
           <h3 className="blogTitle">First Time Home Owner Ideas</h3>
@@ -23,9 +39,14 @@ const Blogs = () => {
             by <span className=" font-semibold">John Peter</span> on
             <span className=" font-semibold"> Nov 18th, 2024</span>
           </p>
-        </div>
+        </motion.div>
 
-        <div className="blogCard">
+        <motion.div
+          variants={props.blogVariants}
+          initial={props.blogVariants.hidden}
+          whileInView={props.blogVariants.visible}
+          className="blogCard"
+        >
           <img src={blog2} alt="blog image" className="blogImg" />
 
           <h3 className="blogTitle">First Time Home Owner Ideas</h3>
@@ -33,9 +54,14 @@ const Blogs = () => {
             by <span className=" font-semibold">John Peter</span> on
             <span className=" font-semibold"> Nov 18th, 2024</span>
           </p>
-        </div>
+        </motion.div>
 
-        <div className="blogCard">
+        <motion.div
+          variants={props.blogVariants}
+          initial={props.blogVariants.hidden}
+          whileInView={props.blogVariants.visible}
+          className="blogCard"
+        >
           <img src={blog3} alt="blog image" className="blogImg" />
 
           <h3 className="blogTitle">First Time Home Owner Ideas</h3>
@@ -43,7 +69,7 @@ const Blogs = () => {
             by <span className=" font-semibold">John Peter</span> on
             <span className=" font-semibold"> Nov 18th, 2024</span>
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

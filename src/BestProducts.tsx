@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import img1 from "./assets/img1.png";
 import img2 from "./assets/img2.png";
 import img3 from "./assets/img3.png";
@@ -5,7 +7,21 @@ import img4 from "./assets/img4.png";
 
 import dot from "./assets/dot.png";
 
-const BestProducts = () => {
+type imageVariants = {
+  hidden: { opacity: number; scale: number };
+  visible: { opacity: number; scale: number; transition: { duration: number } };
+};
+type textVariants = {
+  hidden: { opacity: number; x: number };
+  visible: { opacity: number; x: number; transition: { duration: number } };
+};
+
+type bestProductsProps = {
+  imageVariants: imageVariants;
+  textVariants: textVariants;
+};
+
+const BestProducts = (props: bestProductsProps) => {
   return (
     <section id="product">
       <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14">
@@ -13,15 +29,33 @@ const BestProducts = () => {
         <div className="imgSection">
           <h1 className="sectionHeading">Shop our best products</h1>
 
-          <img src={img1} alt="image 1" />
+          <motion.img
+            variants={props.imageVariants}
+            initial={props.imageVariants.hidden}
+            whileInView={props.imageVariants.visible}
+            src={img1}
+            alt="image 1"
+          />
         </div>
 
         {/* text section */}
         <div className="textSection flex flex-col gap-10">
           <div className="bestProductsGrp">
-            <img src={img2} alt="" className="bestProductImg" />
+            <motion.img
+              variants={props.imageVariants}
+              initial={props.imageVariants.hidden}
+              whileInView={props.imageVariants.visible}
+              src={img2}
+              alt="best product image"
+              className="bestProductImg"
+            />
 
-            <div className="bestProductTextGrp">
+            <motion.div
+              variants={props.textVariants}
+              initial={props.textVariants.hidden}
+              whileInView={props.textVariants.visible}
+              className="bestProductTextGrp"
+            >
               <div>
                 <h4 className="bestProductGrpHeading">living room</h4>
                 <p className="bestProductText">
@@ -31,13 +65,25 @@ const BestProducts = () => {
               </div>
 
               <p className="bestProductReadMore">Read more</p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="bestProductsGrp">
-            <img src={img3} alt="" className="bestProductImg" />
+            <motion.img
+              variants={props.imageVariants}
+              initial={props.imageVariants.hidden}
+              whileInView={props.imageVariants.visible}
+              src={img3}
+              alt="best product image"
+              className="bestProductImg"
+            />
 
-            <div className="bestProductTextGrp">
+            <motion.div
+              variants={props.textVariants}
+              initial={props.textVariants.hidden}
+              whileInView={props.textVariants.visible}
+              className="bestProductTextGrp"
+            >
               <div>
                 <h4 className="bestProductGrpHeading">bedroom</h4>
                 <p className="bestProductText">
@@ -47,13 +93,25 @@ const BestProducts = () => {
               </div>
 
               <p className="bestProductReadMore">Read more</p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="bestProductsGrp">
-            <img src={img4} alt="" className="bestProductImg" />
+            <motion.img
+              variants={props.imageVariants}
+              initial={props.imageVariants.hidden}
+              whileInView={props.imageVariants.visible}
+              src={img4}
+              alt="best product image"
+              className="bestProductImg"
+            />
 
-            <div className="bestProductTextGrp">
+            <motion.div
+              variants={props.textVariants}
+              initial={props.textVariants.hidden}
+              whileInView={props.textVariants.visible}
+              className="bestProductTextGrp"
+            >
               <div>
                 <h4 className="bestProductGrpHeading">office</h4>
                 <p className="bestProductText">
@@ -64,7 +122,7 @@ const BestProducts = () => {
               </div>
 
               <p className="bestProductReadMore">Read more</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -112,7 +170,13 @@ const BestProducts = () => {
         </div>
 
         <div className="imgSection">
-          <img src={img1} alt="" />
+          <motion.img
+            variants={props.imageVariants}
+            initial={props.imageVariants.hidden}
+            whileInView={props.imageVariants.visible}
+            src={img1}
+            alt="big image"
+          />
         </div>
       </div>
     </section>

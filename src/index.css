@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth font-poppins;
+  @apply scroll-smooth font-poppins overflow-x-hidden max-w-full;
 }
 
 .App {
@@ -53,7 +53,7 @@ nav {
 }
 
 .navText {
-  @apply font-semibold text-ehiText hover:text-black hover:scale-110 transition ease-in-out duration-150;
+  @apply font-semibold text-ehiText xl:text-sm hover:text-black hover:scale-110 transition ease-in-out duration-150;
 }
 
 .headerIconGrp {
