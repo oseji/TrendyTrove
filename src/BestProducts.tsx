@@ -8,10 +8,10 @@ import img4 from "./assets/img4.png";
 import dot from "./assets/dot.png";
 
 type imageVariants = {
-  hidden: { opacity: number; scale: number };
+  hidden: { opacity: number; height: number };
   visible: {
     opacity: number;
-    scale: number;
+    height: string;
     transition: { duration: number };
   };
 };
@@ -26,7 +26,16 @@ type thumbnailVariants = {
   };
 };
 
-type textVariants = {
+type textVariantsRight = {
+  hidden: { opacity: number; x: number };
+  visible: {
+    opacity: number;
+    x: number;
+    transition: { duration: number };
+  };
+};
+
+type textVariantsLeft = {
   hidden: { opacity: number; x: number };
   visible: {
     opacity: number;
@@ -38,7 +47,8 @@ type textVariants = {
 type bestProductsProps = {
   imageVariants: imageVariants;
   thumbnailVariants: thumbnailVariants;
-  textVariants: textVariants;
+  textVariantsRight: textVariantsRight;
+  textVariantsLeft: textVariantsLeft;
 };
 
 const BestProducts = (props: bestProductsProps) => {
@@ -71,9 +81,9 @@ const BestProducts = (props: bestProductsProps) => {
             />
 
             <motion.div
-              variants={props.textVariants}
-              initial={props.textVariants.hidden}
-              whileInView={props.textVariants.visible}
+              variants={props.textVariantsRight}
+              initial={props.textVariantsRight.hidden}
+              whileInView={props.textVariantsRight.visible}
               className="bestProductTextGrp"
             >
               <div>
@@ -99,9 +109,9 @@ const BestProducts = (props: bestProductsProps) => {
             />
 
             <motion.div
-              variants={props.textVariants}
-              initial={props.textVariants.hidden}
-              whileInView={props.textVariants.visible}
+              variants={props.textVariantsRight}
+              initial={props.textVariantsRight.hidden}
+              whileInView={props.textVariantsRight.visible}
               className="bestProductTextGrp"
             >
               <div>
@@ -127,9 +137,9 @@ const BestProducts = (props: bestProductsProps) => {
             />
 
             <motion.div
-              variants={props.textVariants}
-              initial={props.textVariants.hidden}
-              whileInView={props.textVariants.visible}
+              variants={props.textVariantsRight}
+              initial={props.textVariantsRight.hidden}
+              whileInView={props.textVariantsRight.visible}
               className="bestProductTextGrp"
             >
               <div>
@@ -151,7 +161,12 @@ const BestProducts = (props: bestProductsProps) => {
         className="flex flex-col xl:flex-row xl:justify-between items-center xl:items-start gap-14  mt-20"
         id="services"
       >
-        <div className="textSection">
+        <motion.div
+          variants={props.textVariantsLeft}
+          initial={props.textVariantsLeft.hidden}
+          whileInView={props.textVariantsLeft.visible}
+          className="textSection"
+        >
           <h1 className="sectionSubHeading">
             We help you make Modern Furniture
           </h1>
@@ -187,7 +202,7 @@ const BestProducts = (props: bestProductsProps) => {
           <button className=" bg-ehiGreen text-white mt-8 block md:mx-auto xl:mx-0">
             Explore more
           </button>
-        </div>
+        </motion.div>
 
         <div className="imgSection">
           <motion.img

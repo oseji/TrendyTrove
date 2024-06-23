@@ -16,8 +16,8 @@ import close from "./assets/close.svg";
 
 function App() {
   const imageVariants = {
-    hidden: { opacity: 0.5, scale: 0.5 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+    hidden: { opacity: 0.8, height: 0 },
+    visible: { opacity: 1, height: "auto", transition: { duration: 1 } },
   };
 
   const thumbnailVariants = {
@@ -26,12 +26,17 @@ function App() {
   };
 
   const blogVariants = {
-    hidden: { opacity: 0, scale: 0.5, y: 120 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, scale: 0.5, y: 110 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const textVariants = {
+  const textVariantsRight = {
     hidden: { opacity: 0, x: 150 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+  };
+
+  const textVariantsLeft = {
+    hidden: { opacity: 0, x: -150 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
   };
 
@@ -118,9 +123,14 @@ function App() {
       <BestProducts
         imageVariants={imageVariants}
         thumbnailVariants={thumbnailVariants}
-        textVariants={textVariants}
+        textVariantsRight={textVariantsRight}
+        textVariantsLeft={textVariantsLeft}
       ></BestProducts>
-      <WhyChooseUs imageVariants={imageVariants}></WhyChooseUs>
+      <WhyChooseUs
+        imageVariants={imageVariants}
+        textVariantsRight={textVariantsRight}
+        textVariantsLeft={textVariantsLeft}
+      ></WhyChooseUs>
       <Reviews></Reviews>
       <Blogs blogVariants={blogVariants}></Blogs>
       <Footer></Footer>

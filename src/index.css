@@ -61,7 +61,7 @@ nav {
 }
 
 .headerIcon {
-  @apply h-5;
+  @apply h-5 cursor-pointer hover:scale-125 transition ease-in-out duration-150;
 }
 
 /* hero section */
@@ -113,7 +113,7 @@ nav {
 
 /* why choose us */
 .whyChooseUsGrp {
-  @apply flex flex-col gap-3 items-start;
+  @apply flex flex-col gap-2 items-start;
 }
 
 .whyChooseUsImg {
@@ -121,7 +121,7 @@ nav {
 }
 
 .whyChooseUsHeading {
-  @apply font-semibold;
+  @apply font-semibold text-sm;
 }
 
 .whyChooseUsText {
@@ -183,7 +183,7 @@ nav {
 }
 
 .blogTitle {
-  @apply font-semibold mt-5 xl:mt-8;
+  @apply font-semibold mt-5 xl:mt-7;
 }
 
 .blogDetails {
