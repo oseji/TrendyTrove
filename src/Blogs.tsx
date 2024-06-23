@@ -5,8 +5,13 @@ import blog2 from "./assets/blog2.png";
 import blog3 from "./assets/blog3.png";
 
 type blogVariants = {
-  hidden: { opacity: number; y: number };
-  visible: { opacity: number; y: number; transition: { duration: number } };
+  hidden: { opacity: number; scale: number; y: number };
+  visible: {
+    opacity: number;
+    scale: number;
+    y: number;
+    transition: { duration: number };
+  };
 };
 
 type blogsProps = {

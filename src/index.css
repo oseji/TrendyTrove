@@ -12,7 +12,7 @@ html {
 }
 
 .App {
-  @apply max-w-[100dvw];
+  @apply max-w-[100dvw] overflow-x-hidden;
 }
 
 section {
@@ -24,7 +24,7 @@ button {
 }
 
 .sectionHeading {
-  @apply text-3xl xl:text-5xl mb-10 capitalize font-semibold text-ehiGreen;
+  @apply text-3xl xl:text-5xl mb-10 capitalize font-semibold text-ehiGreen text-center xl:text-start;
 }
 
 .sectionSubHeading {
@@ -57,7 +57,7 @@ nav {
 }
 
 .headerIconGrp {
-  @apply flex flex-row items-center gap-5;
+  @apply flex flex-row items-center gap-14 xl:gap-5;
 }
 
 .headerIcon {
@@ -66,7 +66,7 @@ nav {
 
 /* hero section */
 .heroSection {
-  @apply flex flex-col justify-center;
+  @apply flex flex-col justify-center text-white bg-[url('./assets/background.webp')];
 }
 
 .heroMainText {

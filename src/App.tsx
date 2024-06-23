@@ -16,17 +16,22 @@ import close from "./assets/close.svg";
 
 function App() {
   const imageVariants = {
-    hidden: { opacity: 0.5, scale: 0.6 },
+    hidden: { opacity: 0.5, scale: 0.5 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   };
 
+  const thumbnailVariants = {
+    hidden: { opacity: 0.5, scale: 0.5, y: 50 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   const blogVariants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, scale: 0.5, y: 120 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   const textVariants = {
-    hidden: { opacity: 0.5, x: 100 },
+    hidden: { opacity: 0, x: 150 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
   };
 
@@ -60,7 +65,9 @@ function App() {
         <div className="logoGrp z-20">
           <div className=" flex flex-row items-center gap-5 z-20">
             <img src={logo} className="xl:h-8 h-5" alt="Trendy Trove logo" />
-            <h3 className=" text-2xl xl:text-3xl font-bold ">TrendyTrove</h3>
+            <h3 className=" text-xl md:text-2xl xl:text-3xl font-bold ">
+              TrendyTrove
+            </h3>
           </div>
 
           <img
@@ -110,6 +117,7 @@ function App() {
       <HeroSection></HeroSection>
       <BestProducts
         imageVariants={imageVariants}
+        thumbnailVariants={thumbnailVariants}
         textVariants={textVariants}
       ></BestProducts>
       <WhyChooseUs imageVariants={imageVariants}></WhyChooseUs>

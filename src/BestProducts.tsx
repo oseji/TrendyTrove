@@ -9,15 +9,35 @@ import dot from "./assets/dot.png";
 
 type imageVariants = {
   hidden: { opacity: number; scale: number };
-  visible: { opacity: number; scale: number; transition: { duration: number } };
+  visible: {
+    opacity: number;
+    scale: number;
+    transition: { duration: number };
+  };
 };
+
+type thumbnailVariants = {
+  hidden: { opacity: number; scale: number; y: number };
+  visible: {
+    opacity: number;
+    scale: number;
+    y: number;
+    transition: { duration: number };
+  };
+};
+
 type textVariants = {
   hidden: { opacity: number; x: number };
-  visible: { opacity: number; x: number; transition: { duration: number } };
+  visible: {
+    opacity: number;
+    x: number;
+    transition: { duration: number };
+  };
 };
 
 type bestProductsProps = {
   imageVariants: imageVariants;
+  thumbnailVariants: thumbnailVariants;
   textVariants: textVariants;
 };
 
@@ -42,9 +62,9 @@ const BestProducts = (props: bestProductsProps) => {
         <div className="textSection flex flex-col gap-10">
           <div className="bestProductsGrp">
             <motion.img
-              variants={props.imageVariants}
-              initial={props.imageVariants.hidden}
-              whileInView={props.imageVariants.visible}
+              variants={props.thumbnailVariants}
+              initial={props.thumbnailVariants.hidden}
+              whileInView={props.thumbnailVariants.visible}
               src={img2}
               alt="best product image"
               className="bestProductImg"
@@ -70,9 +90,9 @@ const BestProducts = (props: bestProductsProps) => {
 
           <div className="bestProductsGrp">
             <motion.img
-              variants={props.imageVariants}
-              initial={props.imageVariants.hidden}
-              whileInView={props.imageVariants.visible}
+              variants={props.thumbnailVariants}
+              initial={props.thumbnailVariants.hidden}
+              whileInView={props.thumbnailVariants.visible}
               src={img3}
               alt="best product image"
               className="bestProductImg"
@@ -98,9 +118,9 @@ const BestProducts = (props: bestProductsProps) => {
 
           <div className="bestProductsGrp">
             <motion.img
-              variants={props.imageVariants}
-              initial={props.imageVariants.hidden}
-              whileInView={props.imageVariants.visible}
+              variants={props.thumbnailVariants}
+              initial={props.thumbnailVariants.hidden}
+              whileInView={props.thumbnailVariants.visible}
               src={img4}
               alt="best product image"
               className="bestProductImg"

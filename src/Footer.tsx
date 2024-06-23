@@ -17,12 +17,22 @@ const Footer = () => {
       <form className="inputGrp">
         <div className=" flex flex-col gap-2">
           <label htmlFor="name">Name: </label>
-          <input type="text" placeholder="Enter your name" />
+          <input
+            type="text"
+            id="name"
+            autoComplete="off"
+            placeholder="Enter your name"
+          />
         </div>
 
         <div className=" flex flex-col gap-2">
           <label htmlFor="email">Email: </label>
-          <input type="email" placeholder="Enter your email" />
+          <input
+            type="email"
+            id="email"
+            autoComplete="off"
+            placeholder="Enter your email"
+          />
         </div>
 
         <button
