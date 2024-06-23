@@ -17,7 +17,7 @@ import close from "./assets/close.svg";
 function App() {
   const imageVariants = {
     hidden: { opacity: 0.8, height: 0 },
-    visible: { opacity: 1, height: "auto", transition: { duration: 1 } },
+    visible: { opacity: 1, height: "auto", transition: { duration: 0.8 } },
   };
 
   const thumbnailVariants = {
@@ -32,12 +32,12 @@ function App() {
 
   const textVariantsRight = {
     hidden: { opacity: 0, x: 150 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   };
 
   const textVariantsLeft = {
     hidden: { opacity: 0, x: -150 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   };
 
   const [showNav, setShowNav] = useState<boolean>(true);

@@ -134,15 +134,31 @@ nav {
 }
 
 .reviewsGrp {
-  @apply flex flex-row items-center xl:justify-center gap-10 overflow-x-scroll xl:overflow-x-hidden;
+  @apply relative min-w-full flex flex-row items-center justify-between gap-10;
 }
 
 .reviewsGrp::-webkit-scrollbar {
   @apply hidden;
 }
 
+.reviewBtn {
+  @apply bg-ehiGreen absolute md:relative z-10;
+}
+
+.reviewBtnIcon {
+  @apply h-3 md:h-5 xl:h-8;
+}
+
+.pagesGrp {
+  @apply flex flex-row gap-5 items-center justify-center mt-5;
+}
+
+.pageIcon {
+  @apply h-2 w-2 md:h-3 md:w-3 rounded-full transition ease-in-out duration-300;
+}
+
 .reviewCard {
-  @apply min-w-[350px] xl:min-w-0 xl:w-[30%] h-[400px] flex flex-col justify-end rounded-xl shadow-xl;
+  @apply min-w-[250px] w-3/4 mx-auto md:mx-0 md:w-[250px] lg:w-[350px] bg-slate-200 xl:min-w-0 xl:w-[30%] h-[350px] flex flex-col justify-end rounded-xl;
 }
 
 .reviewTextBox {
@@ -158,7 +174,7 @@ nav {
 }
 
 .reviewText {
-  @apply text-xs text-ehiText text-center min-h-16;
+  @apply text-xs text-ehiText text-center min-h-24;
 }
 
 .reviewStars {
