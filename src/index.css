@@ -130,7 +130,7 @@ nav {
 
 /* reviews */
 .reviewSection {
-  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-[50dvh] xl:min-h-screen min-w-full;
+  @apply px-5 py-10 xl:px-20 xl:py-14 min-h-[50dvh] xl:min-h-screen min-w-full bg-slate-100;
 }
 
 .reviewsGrp {
@@ -158,7 +158,7 @@ nav {
 }
 
 .reviewCard {
-  @apply min-w-[250px] w-3/4 mx-auto md:mx-0 md:w-[250px] lg:w-[350px] bg-slate-200 xl:min-w-0 xl:w-[30%] h-[350px] flex flex-col justify-end rounded-xl;
+  @apply min-w-[250px] w-3/4 mx-auto md:mx-0 md:w-[250px] lg:w-[350px]  xl:min-w-0 xl:w-[30%] h-[350px] flex flex-col justify-end rounded-xl;
 }
 
 .reviewTextBox {
