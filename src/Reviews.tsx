@@ -116,10 +116,10 @@ const Reviews = () => {
         <div className=" flex flex-row items-center gap-10">
           {reviews.slice(startIndex, endIndex).map((element, index) => (
             <motion.div
-              initial={{ opacity: 0.8, scale: 0.6 }}
+              initial={{ opacity: 0.8, scaleX: 0 }}
               whileInView={{
                 opacity: 1,
-                scale: 1,
+                scaleX: 1,
                 transition: { duration: 0.8 },
               }}
               className={`reviewCard`}

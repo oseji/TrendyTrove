@@ -16,8 +16,8 @@ import close from "./assets/close.svg";
 
 function App() {
   const imageVariants = {
-    hidden: { opacity: 0.8, height: 0 },
-    visible: { opacity: 1, height: "auto", transition: { duration: 0.8 } },
+    hidden: { opacity: 0.8, scaleY: 0 },
+    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.8 } },
   };
 
   const thumbnailVariants = {
@@ -26,8 +26,8 @@ function App() {
   };
 
   const blogVariants = {
-    hidden: { opacity: 0, scale: 0.5, y: 110 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scaleY: 0 },
+    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.5 } },
   };
 
   const textVariantsRight = {
@@ -85,27 +85,61 @@ function App() {
 
         <nav ref={navRef} className="hideNav">
           <ul className="navList">
-            <li className="navText">
+            <li
+              className="navText"
+              onClick={() => {
+                setMenuToggled(false);
+                navRef.current?.classList.add("hideNav");
+              }}
+            >
               <a href="#home" className="navLink">
                 Home
               </a>
             </li>
-            <li className="navText">
+
+            <li
+              className="navText"
+              onClick={() => {
+                setMenuToggled(false);
+                navRef.current?.classList.add("hideNav");
+              }}
+            >
               <a href="#product" className="navLink">
                 Product
               </a>
             </li>
-            <li className="navText">
+
+            <li
+              className="navText"
+              onClick={() => {
+                setMenuToggled(false);
+                navRef.current?.classList.add("hideNav");
+              }}
+            >
               <a href="#services" className="navLink">
                 Services
               </a>
             </li>
-            <li className="navText">
-              <a href="#Blogs" className="navLink">
+
+            <li
+              className="navText"
+              onClick={() => {
+                setMenuToggled(false);
+                navRef.current?.classList.add("hideNav");
+              }}
+            >
+              <a href="#blogPosts" className="navLink">
                 Blog
               </a>
             </li>
-            <li className="navText">
+
+            <li
+              className="navText"
+              onClick={() => {
+                setMenuToggled(false);
+                navRef.current?.classList.add("hideNav");
+              }}
+            >
               <a href="#footer" className="navLink">
                 Contact us
               </a>

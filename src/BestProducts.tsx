@@ -4,14 +4,15 @@ import img1 from "./assets/img1.png";
 import img2 from "./assets/img2.png";
 import img3 from "./assets/img3.png";
 import img4 from "./assets/img4.png";
+import roomWithLights from "./assets/room with lights.png";
 
 import dot from "./assets/dot.png";
 
 type imageVariants = {
-  hidden: { opacity: number; height: number };
+  hidden: { opacity: number; scaleY: number };
   visible: {
     opacity: number;
-    height: string;
+    scaleY: number;
     transition: { duration: number };
   };
 };
@@ -63,7 +64,8 @@ const BestProducts = (props: bestProductsProps) => {
             variants={props.imageVariants}
             initial={props.imageVariants.hidden}
             whileInView={props.imageVariants.visible}
-            src={img1}
+            className="rounded-xl"
+            src={roomWithLights}
             alt="image 1"
           />
         </div>

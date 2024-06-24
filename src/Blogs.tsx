@@ -5,11 +5,11 @@ import blog2 from "./assets/blog2.png";
 import blog3 from "./assets/blog3.png";
 
 type blogVariants = {
-  hidden: { opacity: number; scale: number; y: number };
+  hidden: { opacity: number; scaleY: number };
   visible: {
     opacity: number;
-    scale: number;
-    y: number;
+    scaleY: number;
+
     transition: { duration: number };
   };
 };
@@ -22,7 +22,10 @@ const Blogs = (props: blogsProps) => {
   return (
     <div id="Blogs">
       <div className="flex flex-row justify-between items-center mb-10">
-        <h2 className="text-2xl md:text-3xl xl:text-5xl capitalize font-semibold  text-ehiGreen">
+        <h2
+          id="blogPosts"
+          className="text-2xl md:text-3xl xl:text-5xl capitalize font-semibold  text-ehiGreen"
+        >
           Recent blogs
         </h2>
         <p className=" text-ehiGreen underline hover:scale-110 transition ease-in-out duration-150 cursor-pointer">

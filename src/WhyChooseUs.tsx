@@ -8,10 +8,10 @@ import support from "./assets/support.png";
 import returns from "./assets/returns.png";
 
 type imageVariants = {
-  hidden: { opacity: number; height: number };
+  hidden: { opacity: number; scaleY: number };
   visible: {
     opacity: number;
-    height: string;
+    scaleY: number;
     transition: { duration: number };
   };
 };
